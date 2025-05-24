@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reflexión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Un gris claro para el fondo */
+        }
+        .container {
+            max-width: 800px; /* Ancho máximo del formulario */
+        }
+        textarea {
+            resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+            min-height: 80px; /* Altura mínima para las respuestas */
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 flex justify-center items-center min-h-screen">
+    <div class="container mx-auto bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center">Reflexionando sobre tu Productividad y Bienestar</h1>
+        <p class="text-gray-600 mb-8 text-center">Tómate un momento para reflexionar sobre tu día a día y cómo gestionas tu tiempo y energía. Tus respuestas nos ayudarán a entender mejor tus necesidades.</p>
+
+        <form id="reflectionForm" class="space-y-6">
+            <div>
+                <label for="q1" class="block text-lg font-semibold text-gray-700 mb-2">1. Empecemos con algo amplio: ¿Cómo definirías un "día productivo" para ti? ¿Qué es lo que te hace sentir que aprovechaste bien tu tiempo?</label>
+                <textarea id="q1" name="q1" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div>
+                <label for="q2" class="block text-lg font-semibold text-gray-700 mb-2">2. A veces, el ritmo de vida nos absorbe. ¿Sientes que el día a día te deja suficiente tiempo para ti, para tus intereses o simplemente para desconectar?</label>
+                <textarea id="q2" name="q2" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div>
+                <label for="q3" class="block text-lg font-semibold text-gray-700 mb-2">3. Hablando de desconectar, ¿qué haces usualmente cuando necesitas una pausa mental o física en medio de una actividad intensa? ¿Tienes alguna estrategia?</label>
+                <textarea id="q3" name="q3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div>
+                <label for="q4" class="block text-lg font-semibold text-gray-700 mb-2">4. Muchos experimentamos picos y valles de energía. ¿Has notado momentos específicos del día en los que tu concentración o tu ánimo bajan considerablemente? ¿Cuándo suelen ser esos momentos?</label>
+                <textarea id="q4" name="q4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div>
+                <label for="q5" class="block text-lg font-semibold text-gray-700 mb-2">5. Si pudieras cambiar algo de tu rutina diaria para sentirte con más energía o menos estrés, ¿qué sería eso que te gustaría mejorar?</label>
+                <textarea id="q5" name="q5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div>
+                <label for="q6" class="block text-lg font-semibold text-gray-700 mb-2">6. Considerando los desafíos de la concentración y el manejo de la energía a lo largo del día, ¿estarías abierto/a a explorar soluciones que te sugieran cuándo y cómo tomar esas pausas activas para recargar pilas?</label>
+                <textarea id="q6" name="q6" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div>
+                <label for="q7" class="block text-lg font-semibold text-gray-700 mb-2">7. Precisamente, estamos trabajando en una herramienta digital que te guía a través de pequeñas pausas y te ayuda a optimizar tus momentos de descanso para mejorar tu productividad y bienestar. ¿Te gustaría saber cómo nuestra aplicación podría ayudarte a integrar estas prácticas en tu rutina diaria?</label>
+                <textarea id="q7" name="q7" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <button type="submit" id="submitButton" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200">
+                Enviar Respuestas y Obtener ✨ Consejos
+            </button>
+        </form>
+
+        <div id="loadingMessage" class="mt-6 p-4 bg-blue-100 text-blue-800 rounded-lg text-center hidden">
+            <span class="spinner"></span> Generando tu resumen y consejos personalizados...
+        </div>
+
+        <div id="llmResults" class="mt-8 p-6 bg-gray-50 rounded-xl shadow-inner hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Tus Reflexiones y Consejos ✨</h2>
+            <div id="summaryOutput" class="mb-6">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Resumen de tus Respuestas:</h3>
+                <p class="text-gray-600" id="summaryText"></p>
+            </div>
+            <div id="tipsOutput">
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Consejos Personalizados:</h3>
+                <ul class="list-disc list-inside text-gray-600" id="tipsList"></ul>
+            </div>
+            <div id="errorMessage" class="mt-4 p-4 bg-red-100 text-red-800 rounded-lg hidden">
+                Ocurrió un error al procesar tus respuestas. Por favor, inténtalo de nuevo.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('reflectionForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Previene el envío por defecto del formulario
+
+            const form = event.target;
+            const formData = new FormData(form);
+            let allAnswers = "";
+            // Recorre las preguntas según su nueva numeración
+            for (let i = 1; i <= 7; i++) {
+                const qId = `q${i}`;
+                const labelElement = document.querySelector(`label[for="${qId}"]`);
+                if (labelElement) { // Asegurarse de que el label exista
+                    const labelText = labelElement.textContent.trim();
+                    const answer = formData.get(qId);
+                    allAnswers += `${labelText}\n${answer}\n\n`;
+                }
+            }
+
+            const submitButton = document.getElementById('submitButton');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const llmResultsDiv = document.getElementById('llmResults');
+            const summaryText = document.getElementById('summaryText');
+            const tipsList = document.getElementById('tipsList');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Ocultar resultados anteriores y mensajes de error
+            llmResultsDiv.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+            summaryText.textContent = '';
+            tipsList.innerHTML = '';
+
+            // Mostrar mensaje de carga
+            submitButton.disabled = true;
+            loadingMessage.classList.remove('hidden');
+
+            try {
+                let chatHistory = [];
+                const prompt = `Basado en las siguientes reflexiones sobre productividad y bienestar, genera una respuesta en formato JSON. El JSON debe contener dos campos: 'summary' (un resumen conciso de los puntos clave expresados en las respuestas) y 'tips' (una lista de 3 a 5 consejos prácticos y personalizados para mejorar la gestión del tiempo y la energía, enfocándose en la importancia de las pausas activas y el bienestar, derivados de las respuestas proporcionadas).
+
+Respuestas del usuario:
+${allAnswers}`;
+
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = {
+                    contents: chatHistory,
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                "summary": { "type": "STRING" },
+                                "tips": {
+                                    "type": "ARRAY",
+                                    "items": { "type": "STRING" }
+                                }
+                            },
+                            "propertyOrdering": ["summary", "tips"]
+                        }
+                    }
+                };
+
+                const apiKey = ""; // Canvas will automatically provide it in runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const jsonResponse = JSON.parse(result.candidates[0].content.parts[0].text);
+
+                    summaryText.textContent = jsonResponse.summary;
+                    jsonResponse.tips.forEach(tip => {
+                        const li = document.createElement('li');
+                        li.textContent = tip;
+                        tipsList.appendChild(li);
+                    });
+                    llmResultsDiv.classList.remove('hidden');
+                } else {
+                    errorMessage.classList.remove('hidden');
+                    console.error("Estructura de respuesta inesperada del LLM:", result);
+                }
+
+            } catch (error) {
+                errorMessage.classList.remove('hidden');
+                console.error("Error al llamar a la API de Gemini:", error);
+            } finally {
+                loadingMessage.classList.add('hidden');
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
